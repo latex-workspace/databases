@@ -14,6 +14,7 @@
 \begin{document}
 \maketitle
 \tableofcontents
+\newpage
 
 \section{Introduzione}
 Per immagazzinare dati abbiamo bisogno di:
@@ -306,273 +307,272 @@ In questo casi si dice che:
 Inoltre possiamo rappresentare i seguenti concetti di \underline{overlap e copertura} secondo i seguenti schemini grafici
 \vskip5mm
 \begin{minipage}[t]{0.48\textwidth}
-\begin{center}
-	\begin{tikzpicture}
-		\draw  (0,0) rectangle (4,2);
-		\draw [pattern = north east lines](1,1)circle [radius = 25pt];
-		\draw [pattern = north west lines](3,1)circle [radius = 25pt];
-    \node [below] at (2,0) {No overlap, copertura parziale};
-	\end{tikzpicture}
-\end{center}
-\begin{center}
-	\begin{tikzpicture}
-		\draw  (0,0) rectangle (4,2);
-		\draw [pattern = north east lines](1.5,1)circle [y radius = 25pt, x radius = 35pt];
-		\draw [pattern = north west lines](2.5,1)circle [y radius = 25pt, x radius = 35pt];
-    \node [below] at (2,0) {Overlap, copertura parziale};
-	\end{tikzpicture}
-\end{center}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw  (0,0) rectangle (4,2);
+			\draw [pattern = north east lines](1,1)circle [radius = 25pt];
+			\draw [pattern = north west lines](3,1)circle [radius = 25pt];
+			\node [below] at (2,0) {No overlap, copertura parziale};
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw  (0,0) rectangle (4,2);
+			\draw [pattern = north east lines](1.5,1)circle [y radius = 25pt, x radius = 35pt];
+			\draw [pattern = north west lines](2.5,1)circle [y radius = 25pt, x radius = 35pt];
+			\node [below] at (2,0) {Overlap, copertura parziale};
+		\end{tikzpicture}
+	\end{center}
 \end{minipage}
 %
 \begin{minipage}[t]{0.48\textwidth}
-  \begin{center}
-      \begin{tikzpicture}
-      \draw  (0,0) rectangle (4,2);
-      \draw [pattern = north east lines](0,0)rectangle(2,2);
-      \draw [pattern = north west lines](2,0)rectangle(4,2);
-      \node [below] at (2,0) {No overlap, copertura totale};
-    \end{tikzpicture} 
-  \end{center}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw  (0,0) rectangle (4,2);
+			\draw [pattern = north east lines](0,0)rectangle(2,2);
+			\draw [pattern = north west lines](2,0)rectangle(4,2);
+			\node [below] at (2,0) {No overlap, copertura totale};
+		\end{tikzpicture}
+	\end{center}
 
-  \begin{center}
-      \begin{tikzpicture}
-      \draw  (0,0) rectangle (4,2);
-      \draw [pattern = north east lines](0,0)rectangle(2.5,2);
-      \draw [pattern = north west lines](1.5,0)rectangle(4,2);
-      \node [below] at (2,0) {Overlap, copertura totale};
-    \end{tikzpicture} 
-  \end{center}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw  (0,0) rectangle (4,2);
+			\draw [pattern = north east lines](0,0)rectangle(2.5,2);
+			\draw [pattern = north west lines](1.5,0)rectangle(4,2);
+			\node [below] at (2,0) {Overlap, copertura totale};
+		\end{tikzpicture}
+	\end{center}
 \end{minipage}
 \vskip5mm
-\subsubsection*{Aggregazione}
 
-\newpage
+\subsubsection*{Aggregazione}
 \section{Riassuntone}
 \subsection{Termini}
 \begin{itemize}
-  \item \underline{Superchiave}: un insieme di attributi che identifica univocamente una tupla
-  \item \underline{Superchiave minimale}: superchiave che se si toglie uno qualsiasi degli attributi non è più chiave
-  \item \underline{Chiavi candidate}: tutte le superchiavi minimali di una relazione
-  \item \underline{Attributo primot}: attributo che appartiene \underline{almeno} ad una chiave candidata
-  \item \underline{Attributo non primot}: attributo che non appartiene \underline{a nessuna} chiave candidata
-  \item \underline{Schema (scheme)}: insieme di tabelle e vincoli di integrità di un db
+	\item \underline{Superchiave}: un insieme di attributi che identifica univocamente una tupla
+	\item \underline{Superchiave minimale}: superchiave che se si toglie uno qualsiasi degli attributi non è più chiave
+	\item \underline{Chiavi candidate}: tutte le superchiavi minimali di una relazione
+	\item \underline{Attributo primot}: attributo che appartiene \underline{almeno} ad una chiave candidata
+	\item \underline{Attributo non primot}: attributo che non appartiene \underline{a nessuna} chiave candidata
+	\item \underline{Schema (scheme)}: insieme di tabelle e vincoli di integrità di un db
 \end{itemize}
 \subsection{Vincoli}
 \begin{itemize}
-  \item Dominio: il tipo inserito in una colonna deve rispettare il formato della colonna stessa: 
-    \begin{itemize}
-      \item Data type \textit{\textit{string, int,...}}
-      \item Range (\textit{int in range 0-120})
-      \item Format (\textit{mail, contains "@"})
-      \item Enum values (\textit{value can be either a,b,c,...})
-      \item Null constrait (\textit{Item cannot be null})
-    \end{itemize}
-  \item Chiave: deve esistere una chiave per ogni relazione
-  \item Integrità delle entità: nessun valore della chiave primaria può essere null
-  \item Integrità referenziale: una foreign key non può far riferimento ad una tupla non presente nella relazione referenziata
-  \item Vincoli di integrità semantica: vincoli che non possono essere espressi dal dbms stesso (\textit{es, tutti gli impiegati non possono lavorare più di 46 ore a settimana})
+	\item Dominio: il tipo inserito in una colonna deve rispettare il formato della colonna stessa:
+	      \begin{itemize}
+		      \item Data type \textit{\textit{string, int,...}}
+		      \item Range (\textit{int in range 0-120})
+		      \item Format (\textit{mail, contains "@"})
+		      \item Enum values (\textit{value can be either a,b,c,...})
+		      \item Null constrait (\textit{Item cannot be null})
+	      \end{itemize}
+	\item Chiave: deve esistere una chiave per ogni relazione
+	\item Integrità delle entità: nessun valore della chiave primaria può essere null
+	\item Integrità referenziale: una foreign key non può far riferimento ad una tupla non presente nella relazione referenziata
+	\item Vincoli di integrità semantica: vincoli che non possono essere espressi dal dbms stesso (\textit{es, tutti gli impiegati non possono lavorare più di 46 ore a settimana})
 \end{itemize}
 \subsubsection*{Violazione dei vincoli}
 \begin{itemize}
-  \item \underline{Insert}: viola tutti: 
-    \begin{itemize}
-      \item Dominio (valore con tipo sbagliato)
-      \item Integrità entità (chiave null)
-      \item Integrità referenziale (Fk non esiste)
-      \item Integrità semantica
-    \end{itemize}
-  \item \underline{Delete} 
-  \item Integrità referenziale (toglie valore referenziato )
-    \item \underline{Update}: viola tutti:
-      \begin{itemize}
-        \item E' come delete + insert
-      \end{itemize}
+	\item \underline{Insert}: viola tutti:
+	      \begin{itemize}
+		      \item Dominio (valore con tipo sbagliato)
+		      \item Integrità entità (chiave null)
+		      \item Integrità referenziale (Fk non esiste)
+		      \item Integrità semantica
+	      \end{itemize}
+	\item \underline{Delete}
+	\item Integrità referenziale (toglie valore referenziato )
+	\item \underline{Update}: viola tutti:
+	      \begin{itemize}
+		      \item E' come delete + insert
+	      \end{itemize}
 \end{itemize}
 \subsubsection*{Mantenere integrità}
 \begin{itemize}
-    \item \underline{Restrict}: impedisce operazione
-  \item \underline{Cascade}: rimuove tuple che referenziano tupla eliminata
-  \item \underline{Set null/default}: setta la chiave referenziante a nulla/default value
+	\item \underline{Restrict}: impedisce operazione
+	\item \underline{Cascade}: rimuove tuple che referenziano tupla eliminata
+	\item \underline{Set null/default}: setta la chiave referenziante a nulla/default value
 \end{itemize}
 \subsection{Mapping}
 \begin{itemize}
-  \item \underline{Vincolo di chiave} ($ E_1, E_2 $, vincolo su $ E_2 $ )
-    \begin{itemize}
-      \item Opzione 1: $ FK\left(E_1, E_2\right), PK\left(E_2\right) $
-      \item Opzione 2: aggiungo colonna a $ E_2 $ che referenzia $ PK\left(E_1\right) $
-    \end{itemize}
-  \item \underline{Vincolo di partecipazione totale} ($ E_1, E_2 $, vincolo su $ E_2 $): non può essere rappresentato completamente, ma solo in parte 
-    \begin{itemize}
-      \item Aggiungo \textit{not null} sulla $ FK\left(E_1\right) $ in $ E_2 $
-    \end{itemize}
-  \item \underline{Weak entities} ($ E_1, E_2 $, $ E_2 $ è weak)
-    \begin{itemize}
-      \item $ FK\left(E_2\right) $ è \textit{not null} (attributo non esiste senza istanza padrone)
-      \item ON DELETE CASCADE per eliminare weak instance quando viene eliminata estanza padrone
-    \end{itemize}
-  \item \underline{Gerarchie IS-A} ($ E, C_1, C_2 $): 
-      \begin{itemize}
-        \item Opzione 1: 
-          \begin{itemize}
-            \item $ PK(E) = \text{ ssn }$  $ PK\left(C_1\right) = FK\left(C_1\right) = \text{ ssn } $ e estessa cosa per $ C_2 $
-            \item ON DELETE CASCADE: se elimino superclasse elimino anche classe child corrispondente
-          \end{itemize}
-        \item Opzione 2 (se ce copertura totale): elimino classe padre
-      \end{itemize}
-    \item \underline{Aggregazioni}: Relazione esterna ha attributi della relazione interna e la chiave di ciò a cui è collegata. Si può semplificare se 
-      \begin{itemize}
-        \item Relazione esterna non ha attributi
-        \item Aggregazione ha vincolo di partecipazione totale su relazione esterna
-      \end{itemize}
+	\item \underline{Vincolo di chiave} ($ E_1, E_2 $, vincolo su $ E_2 $ )
+	      \begin{itemize}
+		      \item Opzione 1: $ FK\left(E_1, E_2\right), PK\left(E_2\right) $
+		      \item Opzione 2: aggiungo colonna a $ E_2 $ che referenzia $ PK\left(E_1\right) $
+	      \end{itemize}
+	\item \underline{Vincolo di partecipazione totale} ($ E_1, E_2 $, vincolo su $ E_2 $): non può essere rappresentato completamente, ma solo in parte
+	      \begin{itemize}
+		      \item Aggiungo \textit{not null} sulla $ FK\left(E_1\right) $ in $ E_2 $
+	      \end{itemize}
+	\item \underline{Weak entities} ($ E_1, E_2 $, $ E_2 $ è weak)
+	      \begin{itemize}
+		      \item $ FK\left(E_2\right) $ è \textit{not null} (attributo non esiste senza istanza padrone)
+		      \item ON DELETE CASCADE per eliminare weak instance quando viene eliminata estanza padrone
+	      \end{itemize}
+	\item \underline{Gerarchie IS-A} ($ E, C_1, C_2 $):
+	      \begin{itemize}
+		      \item Opzione 1:
+		            \begin{itemize}
+			            \item $ PK(E) = \text{ ssn }$  $ PK\left(C_1\right) = FK\left(C_1\right) = \text{ ssn } $ e estessa cosa per $ C_2 $
+			            \item ON DELETE CASCADE: se elimino superclasse elimino anche classe child corrispondente
+		            \end{itemize}
+		      \item Opzione 2 (se ce copertura totale): elimino classe padre
+	      \end{itemize}
+	\item \underline{Aggregazioni}: Relazione esterna ha attributi della relazione interna e la chiave di ciò a cui è collegata. Si può semplificare se
+	      \begin{itemize}
+		      \item Relazione esterna non ha attributi
+		      \item Aggregazione ha vincolo di partecipazione totale su relazione esterna
+	      \end{itemize}
 \end{itemize}
 \subsection{Algebra relazionale}
 \begin{itemize}
-  \item $ \sigma  $: select
-  \item $ \pi  $ : project
-  \item $ \rho  $: rename
-  \item Divisione: $ A\left(x, y\right) / B\left(y\right) $
-      \begin{itemize}
-        \item Raggruppo per colonne $ x $ di $ A $
-        \item Metto in tabella risultato gli $ x $ che hanno tutti gli y di $ A $
-          \[
-            A / B = \left\{x \text{ t.c. } \exists \left<x,y\right> \forall y \in B \right\}
-          \]
-      \end{itemize}
+	\item $ \sigma  $: select
+	\item $ \pi  $ : project
+	\item $ \rho  $: rename
+	\item Divisione: $ A\left(x, y\right) / B\left(y\right) $
+	      \begin{itemize}
+		      \item Raggruppo per colonne $ x $ di $ A $
+		      \item Metto in tabella risultato gli $ x $ che hanno tutti gli y di $ A $
+		            \[
+			            A / B = \left\{x \text{ t.c. } \exists \left<x,y\right> \forall y \in B \right\}
+		            \]
+	      \end{itemize}
 \end{itemize}
 \subsection{Normalizzazione}
 \begin{itemize}
-  \item \textbf{Prima forma normale}: 
-    \begin{itemize}
-      \item No attributi multivalore
-      \item No tuple duplicate (esiste chiave)
-    \end{itemize}
-  \item \textbf{Seconda forma normale}: no dipendenze parziali
-    \begin{itemize}
-      \item Controlla che tutti gli attributi non primi non dipenda parzialmente da alcuna chiave candidata
-    \end{itemize}
-    \textbf{Terza forma normale}: no dipendenze transitive. Per ogni dipendenza funzionale, $ X \rightarrow Y $
-    \vskip3mm 
-    Ogni freccia entrante in un attributo non primo deve dipendere da una chiave candidata
-    \begin{itemize}
-      \item $ X $ è superchiave
-      \item $ Y $ è primo
-    \end{itemize}
-  \item \textbf{Forma di Boyce Codd}
-    \begin{itemize}
-      \item Per ogni df $ X \rightarrow Y $, X deve essere una superchiave
-    \end{itemize}
+	\item \textbf{Prima forma normale}:
+	      \begin{itemize}
+		      \item No attributi multivalore
+		      \item No tuple duplicate (esiste chiave)
+	      \end{itemize}
+	\item \textbf{Seconda forma normale}: no dipendenze parziali
+	      \begin{itemize}
+		      \item Controlla che tutti gli attributi non primi non dipenda parzialmente da alcuna chiave candidata
+	      \end{itemize}
+	      \textbf{Terza forma normale}: no dipendenze transitive. Per ogni dipendenza funzionale, $ X \rightarrow Y $
+	      \vskip3mm
+	      Ogni freccia entrante in un attributo non primo deve dipendere da una chiave candidata
+	      \begin{itemize}
+		      \item $ X $ è superchiave
+		      \item $ Y $ è primo
+	      \end{itemize}
+	\item \textbf{Forma di Boyce Codd}
+	      \begin{itemize}
+		      \item Per ogni df $ X \rightarrow Y $, X deve essere una superchiave
+	      \end{itemize}
 \end{itemize}
 
 \subsection{Livello fisico}
 \subsubsection*{Terminologia}
 \begin{itemize}
-  \item $ P $: dimensione della pagina
-  \item $ S: $ dimensione del file
-  \item $ t_R $ dimensione di una tupla di una tabella $ R $
-  \item $ P_R $: numero di pagine che contengono tuple di $ R $
-  \item $ \left|R.A\right| $: numero di valori diversi per l'attributo $ A $
-  \item $ \left|R\right| $: numero di tuple di $ R $
-  \item $ \left|R_{c==c}\right| $: numero di tuple per le quali è soddisfatta la condizione c == c
-  \item $ f= \frac{1}{\left|R.A\right|} $: selectivity factor
+	\item $ P $: dimensione della pagina
+	\item $ S: $ dimensione del file
+	\item $ t_R $ dimensione di una tupla di una tabella $ R $
+	\item $ P_R $: numero di pagine che contengono tuple di $ R $
+	\item $ \left|R.A\right| $: numero di valori diversi per l'attributo $ A $
+	\item $ \left|R\right| $: numero di tuple di $ R $
+	\item $ \left|R_{c==c}\right| $: numero di tuple per le quali è soddisfatta la condizione c == c
+	\item $ f= \frac{1}{\left|R.A\right|} $: selectivity factor
 \end{itemize}
 
 \subsubsection*{Heap list}
 \begin{itemize}
-  \item Scan 
-    \[
-    P_R
-    \]
-  \item Equality search
-    \[
-    P_R
-    \]
-  \item Insert 
-    \[
-    2
-    \]
-    leggo ultima pagina in $ \frac{S}{P}-1 $ e eventualmente ne aggiungo una nuova
-  \item Delete 
-    \[
-    P_R + \left|R_{c=c}\right| \quad \text{ dove } \left|R_{c=c}\right| \approx \frac{\left|R\right|}{\left|R.A\right|}
-    \]
+	\item Scan
+	      \[
+		      P_R
+	      \]
+	\item Equality search
+	      \[
+		      P_R
+	      \]
+	\item Insert
+	      \[
+		      2
+	      \]
+	      leggo ultima pagina in $ \frac{S}{P}-1 $ e eventualmente ne aggiungo una nuova
+	\item Delete
+	      \[
+		      P_R + \left|R_{c=c}\right| \quad \text{ dove } \left|R_{c=c}\right| \approx \frac{\left|R\right|}{\left|R.A\right|}
+	      \]
 \end{itemize}
 
 \subsubsection*{Sorted file}
 \begin{itemize}
-  \item Scan:
-    \[
-    P_R
-    \]
-  \item Equality search o ricerca per intervallo: 
-  \[
-    \log_2\left(P_R\right) + \left\lceil \frac{\left|R_{c=c}\right|}{\frac{P}{t_R}} \right\rceil
-  \]
-  \item Delete: 
-    \[
-    \log_2\left(P_R\right) + 2 \cdot \left\lceil \frac{\left|R_{c=c}\right|}{\frac{P}{t_R}} \right\rceil
-    \]
-    il $ \cdot 2 $ è dato dal fatto che le pagine contenenti le tuple vanno prima lette e poi eliminate
-  \item Insert
-    \[
-    \log_2\left(P_R\right) + 1
-    \]
-    Se non c'è spazio ho bisogno di spostare tutte le $ P_R $ tuple nel caso peggiore
+	\item Scan:
+	      \[
+		      P_R
+	      \]
+	\item Equality search o ricerca per intervallo:
+	      \[
+		      \log_2\left(P_R\right) + \left\lceil \frac{\left|R_{c=c}\right|}{\frac{P}{t_R}} \right\rceil
+	      \]
+	\item Delete:
+	      \[
+		      \log_2\left(P_R\right) + 2 \cdot \left\lceil \frac{\left|R_{c=c}\right|}{\frac{P}{t_R}} \right\rceil
+	      \]
+	      il $ \cdot 2 $ è dato dal fatto che le pagine contenenti le tuple vanno prima lette e poi eliminate
+	\item Insert
+	      \[
+		      \log_2\left(P_R\right) + 1
+	      \]
+	      Se non c'è spazio ho bisogno di spostare tutte le $ P_R $ tuple nel caso peggiore
 \end{itemize}
 
 \subsubsection*{B+ tree}
-Costo lookup: 
+Costo lookup:
 \[
-  \log_B \left(R.A\right)
+	\log_B \left(R.A\right)
 \]
-Equality search unclustered (nel caso peggiore ogni tupla sta in una pagina diversa): 
+Equality search unclustered (nel caso peggiore ogni tupla sta in una pagina diversa):
 \[
-  \log_B \left(R.A\right) + R_{a = a}
+	\log_B \left(R.A\right) + R_{a = a}
 \]
-Equality search clustered (tuple sono contigue quindi complessità diminuisce): 
+Equality search clustered (tuple sono contigue quindi complessità diminuisce):
 \[
-  \log_B \left(R.A\right) +\left\lceil \frac{\left|R_{a = a}\right|}{ \frac{P}{t_r}} \right\rceil 
+	\log_B \left(R.A\right) +\left\lceil \frac{\left|R_{a = a}\right|}{ \frac{P}{t_r}} \right\rceil
 \]
-Insert: 
+Insert:
 \[
-  \log_B \left(R.A\right)  + 2
+	\log_B \left(R.A\right)  + 2
 \]
 \subsubsection*{Hash table}
-Costo lookup: 
+Costo lookup:
 \[
-L_h \approx 1.2
+	L_h \approx 1.2
 \]
-Costo insert: 
+Costo insert:
 \[
-L_h + 2
+	L_h + 2
 \]
 
 
 \subsection{Joins}
 \subsubsection*{Nested Loop Join}
 \[
-  P_R  \cdot  \left(P_S + 1\right)
+	P_R  \cdot  \left(P_S + 1\right)
 \]
 \subsubsection*{Sort Merge Join}
-Costo se tuple già ordinate: 
+Costo se tuple già ordinate:
 \[
-P_R + P_S
+	P_R + P_S
 \]
-Costo ordinamento tuple: 
+Costo ordinamento tuple:
 \[
-  2 \cdot  P_R \cdot  \left(\left\lceil \log_{b-1} \left\lceil \frac{P_R}{B} \right\rceil \right\rceil + 1\right)
+	2 \cdot  P_R \cdot  \left(\left\lceil \log_{b-1} \left\lceil \frac{P_R}{B} \right\rceil \right\rceil + 1\right)
 \]
 \subsubsection*{Hash join}
-Costo se tuple già in bucket: 
+Costo se tuple già in bucket:
 \[
-P_R + P_S
+	P_R + P_S
 \]
-Costo inserimento in bucket: 
+Costo inserimento in bucket:
 \[
-  P_R + 2 \cdot \left|R\right|
+	P_R + 2 \cdot \left|R\right|
 \]
 \subsubsection*{Indexed Nested Loop Join}
 \[
-P_R + \left|R\right| \cdot  \text{ CostoEqualitySearch }
+	P_R + \left|R\right| \cdot  \text{ CostoEqualitySearch }
 \]
 
 \end{document}
