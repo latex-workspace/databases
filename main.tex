@@ -1,11 +1,9 @@
 %&../.preamble
-\endofdump
+\externalize{../.preamble}
 
 \usetikzlibrary {er}
 \usetikzlibrary{external}
 \usetikzlibrary{patterns}
-\tikzset{external/system call={pdflatex --shell-escape --fmt=../.preamble --halt-on-error -jobname "\image" "\endofdump\texsource"}}
-\tikzexternalize[prefix=tikz/]
 
 \title{Basi di dati}
 \author{Marini Mattia}
